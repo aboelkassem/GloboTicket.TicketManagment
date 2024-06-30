@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace GloboTicket.TicketManagement.Application.Extensions
+namespace GloboTicket.TicketManagement.Application
 {
     public static class ApplicationServiceRegistration
     {

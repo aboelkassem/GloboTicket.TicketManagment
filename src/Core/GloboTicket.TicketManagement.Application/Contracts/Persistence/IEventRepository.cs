@@ -5,5 +5,5 @@ namespace GloboTicket.TicketManagement.Application.Contracts.Persistence;
 // Specific Repository
 public interface IEventRepository : IAsyncRepository<Event>
 {
-    Task<bool> IsEventAndDateUnique(string name, DateTime date);
+    Task<bool> IsEventNameAndDateUnique(string name, DateTime date);
 }
