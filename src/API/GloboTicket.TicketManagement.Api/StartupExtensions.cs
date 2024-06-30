@@ -1,4 +1,5 @@
-﻿using GloboTicket.TicketManagement.Application;
+﻿using GloboTicket.TicketManagement.Api.Utility;
+using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagement.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -28,12 +29,24 @@ namespace GloboTicket.TicketManagement.Api
                         .AllowCredentials()
                     ));
 
+            builder.Services.AddSwaggerDocument(settings =>
+            {
+                settings.AddHeaders();
+                settings.Title = "Globo Ticket APIs";
+            });
+
             return builder.Build();
         }
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
             app.UseCors("open");
+
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseOpenApi();
+                app.UseSwaggerUi();
+            }
 
             app.UseHttpsRedirection();
 
