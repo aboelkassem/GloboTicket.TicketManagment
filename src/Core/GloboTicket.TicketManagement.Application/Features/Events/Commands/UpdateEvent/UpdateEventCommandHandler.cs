@@ -3,7 +3,7 @@ using GloboTicket.TicketManagement.Application.Contracts.Persistence;
 using GloboTicket.TicketManagement.Domain.Entities;
 using MediatR;
 
-namespace GloboTicket.TicketManagement.Application.Features.Categories.Commands.UpdateEvent
+namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
     public class UpdateEventCommandHandler : IRequestHandler<UpdateEventCommand>
     {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace GloboTicket.TicketManagement.Application.Features.Categories.Commands.UpdateEvent
+namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEvent
 {
     public class UpdateEventCommand : IRequest
     {

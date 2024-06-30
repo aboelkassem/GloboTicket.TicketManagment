@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace GloboTicket.TicketManagement.Application.Features.Categories.Commands.DeleteEvent
+namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.DeleteEvent
 {
     public class DeleteEventCommand : IRequest
     {
