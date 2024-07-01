@@ -1,14 +1,15 @@
-﻿using GloboTicket.TicketManagement.Domain.Common;
+﻿using GloboTicket.TicketManagement.Application.Contracts;
+using GloboTicket.TicketManagement.Domain.Common;
 using GloboTicket.TicketManagement.Domain.Entities;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore;
-using GloboTicket.TicketManagement.Application.Contracts;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace GloboTicket.TicketManagement.Persistence
 {
     public class GloboTicketDbContext : DbContext
     {
         private readonly ILoggedInUserService? _loggedInUserService;
+
         public GloboTicketDbContext(DbContextOptions<GloboTicketDbContext> options)
            : base(options)
         {
@@ -26,7 +27,6 @@ namespace GloboTicket.TicketManagement.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Search for all IEntityTypeConfiguration and apply them
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketDbContext).Assembly);
 
             //seed data, added through migrations
@@ -107,7 +107,7 @@ namespace GloboTicket.TicketManagement.Persistence
             modelBuilder.Entity<Event>().HasData(new Event
             {
                 EventId = Guid.Parse("{1BABD057-E980-4CB3-9CD2-7FDD9E525668}"),
-                Name = "Techorama 2023",
+                Name = "Techorama Belgium",
                 Price = 400,
                 Artist = "Many",
                 Date = DateTime.Now.AddMonths(10),
@@ -192,7 +192,6 @@ namespace GloboTicket.TicketManagement.Persistence
             });
         }
 
-        // override/wrapper with extra code
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach (var entry in ChangeTracker.Entries<AuditableEntity>())

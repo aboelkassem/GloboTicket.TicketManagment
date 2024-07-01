@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="NSwag.AspNetCore" Version="14.0.8" />
+	<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview4.23342.2" />
   </ItemGroup>
   
   <ItemGroup>

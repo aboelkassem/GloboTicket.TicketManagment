@@ -29,7 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API\GloboTicket.TicketManagement.Api\GloboTicket.TicketManagement.Api.csproj" />
-    <ProjectReference Include="..\Core\GloboTicket.TicketManagement.Application\GloboTicket.TicketManagement.Application.csproj" />
   </ItemGroup>
 
 </Project>

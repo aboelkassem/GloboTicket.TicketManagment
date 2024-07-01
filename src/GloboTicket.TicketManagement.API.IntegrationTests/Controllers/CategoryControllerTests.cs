@@ -1,11 +1,9 @@
 using GloboTicket.TicketManagement.API.IntegrationTests.Base;
 using GloboTicket.TicketManagement.Application.Features.Categories.Queries.GetCategoriesList;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using System.Text.Json;
 
 namespace GloboTicket.TicketManagement.API.IntegrationTests.Controllers
 {
-
     public class CategoryControllerTests : IClassFixture<CustomWebApplicationFactory<Program>>
     {
         private readonly CustomWebApplicationFactory<Program> _factory;
@@ -25,9 +23,9 @@ namespace GloboTicket.TicketManagement.API.IntegrationTests.Controllers
             response.EnsureSuccessStatusCode();
 
             var responseString = await response.Content.ReadAsStringAsync();
-
-            var result = JsonSerializer.Deserialize<List<CategoryListItemVm>>(responseString);
             
+            var result = JsonSerializer.Deserialize<List<CategoryListItemVm>>(responseString);
+
             Assert.IsType<List<CategoryListItemVm>>(result);
             Assert.NotEmpty(result);
         }

@@ -14,7 +14,6 @@ namespace GloboTicket.TicketManagement.API.IntegrationTests.Base
         {
             builder.ConfigureServices(services =>
             {
-
                 services.AddDbContext<GloboTicketDbContext>(options =>
                 {
                     options.UseInMemoryDatabase("GloboTicketDbContextInMemoryTest");
