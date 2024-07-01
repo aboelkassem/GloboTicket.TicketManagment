@@ -18,10 +18,10 @@ namespace GloboTicket.TicketManagement.Application.Profiles
             // Write auto mapper custom mappings 
             CreateMap<Event, EventListItemVm>().ReverseMap(); // reverse is two way
             CreateMap<Event, EventDetailVm>().ReverseMap();
-            CreateMap<Event, EventsExportDto>().ReverseMap();
             CreateMap<Event, CreateEventCommand>().ReverseMap();
             CreateMap<Event, UpdateEventCommand>().ReverseMap();
             CreateMap<Event, CategoryEventDto>().ReverseMap();
+            CreateMap<Event, EventsExportDto>().ReverseMap();
 
             CreateMap<Category, CategoryDto>();
             CreateMap<Category, CategoryListItemVm>();
