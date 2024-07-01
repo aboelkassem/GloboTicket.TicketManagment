@@ -21,7 +21,6 @@ namespace GloboTicket.TicketManagement.Persistence.IntegrationTests
             _loggedInUserServiceMock.Setup(m => m.UserId).Returns(_loggedInUserId);
 
             _globoTicketDbContext = new GloboTicketDbContext(dbContextOptions, _loggedInUserServiceMock.Object);
-            _globoTicketDbContext = new GloboTicketDbContext(dbContextOptions);
         }
 
         [Fact]
