@@ -4,13 +4,15 @@ using GloboTicket.TicketManagement.Application.Contracts.Persistence;
 using GloboTicket.TicketManagement.Application.Models.Mail;
 using GloboTicket.TicketManagement.Domain.Entities;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.CreateEvent
 {
     public class CreateEventCommandHandler(
         IMapper _mapper, 
         IEventRepository _eventRepository, 
-        IEmailService _emailService
+        IEmailService _emailService,
+        ILogger<CreateEventCommandHandler> _logger
         ) : IRequestHandler<CreateEventCommand, Guid>
     {
         public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
