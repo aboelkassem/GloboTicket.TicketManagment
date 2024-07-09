@@ -28,13 +28,12 @@ namespace GloboTicket.TicketManagement.Api
 
             builder.Services.AddControllers();
 
-            var apiUrl = builder.Configuration["ApiUrl"] ?? "https://localhost:7121";
             var blazorUrl = builder.Configuration["BlazorUrl"] ?? "https://localhost:7020";
 
             builder.Services.AddCors(options =>
                 options.AddPolicy(
                     "open",
-                    policy => policy.WithOrigins(apiUrl, blazorUrl)
+                    policy => policy.WithOrigins(blazorUrl)
                         .AllowAnyMethod()
                         .SetIsOriginAllowed(pol => true)
                         .AllowAnyHeader()
