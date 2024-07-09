@@ -41,6 +41,7 @@ namespace GloboTicket.TicketManagement.Application.Features.Events.Commands.Crea
             {
                 // just log it
                 // this shouldn't stop the api from doing else
+                _logger.LogError($"Mailing about event {@event.EventId} failed due to an error with the mail service: {ex.Message}");
             }
 
             return @event.EventId;
