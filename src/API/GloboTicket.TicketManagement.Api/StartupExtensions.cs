@@ -47,6 +47,8 @@ namespace GloboTicket.TicketManagement.Api
                 settings.Title = "Globo Ticket APIs";
             });
 
+            builder.Services.AddEndpointsApiExplorer();
+
             return builder.Build();
         }
 
